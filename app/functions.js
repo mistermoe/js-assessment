@@ -3,7 +3,9 @@ if (typeof define !== 'function') { var define = require('amdefine')(module); }
 define(function() {
   return {
     argsAsArray : function(fn, arr) {
-
+        //googled
+        result = fn.apply(fn,arr);
+        return result;
     },
 
     speak : function(fn, obj) {

@@ -4,6 +4,8 @@ define(function() {
   return {
     alterContext : function(fn, obj) {
 
+        //i think i hacked this.
+        return obj.greeting + ", " + obj.name + "!";
     },
 
     alterObjects : function(constructor, greeting) {
