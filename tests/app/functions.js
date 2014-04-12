@@ -27,12 +27,12 @@ define([
 
     it('you should be able to change the context in which a function is called', function() {
       var speak = function() {
-            return sayIt(this.greeting, this.name, '!!!');
-          },
-          obj = {
-            greeting : 'Hello',
-            name : 'Rebecca'
-          };
+        return sayIt(this.greeting, this.name, '!!!');
+      },
+      obj = {
+        greeting : 'Hello',
+        name : 'Rebecca'
+      };
 
       var result = answers.speak(speak, obj);
       expect(result).to.eql('Hello, Rebecca!!!');

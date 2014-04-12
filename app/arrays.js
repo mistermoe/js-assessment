@@ -27,12 +27,13 @@ define(function() {
     },
 
     removeWithoutCopy : function(arr, item) {
-        for (var i = arr.length; i > 0; i--) {
-            if (arr[i] == item) {
-                arr.splice(i, 1);
-            }
-            return arr;
+        for (var i = arr.length - 1; i > 0; i--) {
+          if (arr[i] === item) {
+            removed = arr.splice(i,1);
+          }
         }
+        return arr;
+
     },
 
     append : function(arr, item) {
@@ -78,7 +79,24 @@ define(function() {
     },
 
     duplicates : function(arr) {
-        return arr;
+        var obj = {};
+        var duplicates = [];
+
+        for (var i = 0; i < arr.length; i++) {
+          if (obj[arr[i]] !== undefined ) {
+            obj[arr[i]] += 1;
+          }
+          else {
+           obj[arr[i]] = 1;
+          }
+        }
+
+        for (var key in obj) {
+          if (obj[key] > 1) {
+            duplicates.push(parseInt(key, 10));
+          }
+        }
+        return duplicates;
     },
 
     square : function(arr) {
